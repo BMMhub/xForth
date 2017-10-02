@@ -47,7 +47,8 @@ t-cell t-constant cell
 
 target
 
-include src/kernel.fth
+\ include src/kernel.fth
+include test/blink-curiosity.fth
 
 end-target
 
