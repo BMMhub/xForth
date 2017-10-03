@@ -1,9 +1,26 @@
-include target/nucleus.fth
+\ include target/nucleus.fth
 
 hex
 \ In bank 0.		Bank 1	Bank 2	Bank 3	Bank 4
 00C constant porta	\ trisa	lata	ansela	wpua
 00E constant portc	\ trisc	latc	anselc	wpuc
+
+0 org
+code blink
+   \ then,
+
+   0021 ,
+   00 movlw,
+   00C movwf, \ TRISA
+   0020 ,
+
+   FF movlw,
+   00C movwf,
+
+   begin, again,
+end-code
+
+(*
 
 code set-output
    5 status bsf,
@@ -11,6 +28,7 @@ code set-output
    00C movwf, \ TRISA
    00E movwf, \ TRISB
    5 status bcf,
+   ret,
 end-code
 
    \ lata = 0
@@ -34,3 +52,4 @@ variable x
 : led-off   00 !porta  n @ x @ - delay ;
 \ Jump here from COLD.
 : warm   then setup begin led-off led-on again ;
+*)
