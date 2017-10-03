@@ -1,6 +1,6 @@
-device pic16f88
+device pic16f1619
 set system.disableerrormsg true
-hwtool pickit3 -p
+hwtool sk -p
 program "./image.hex"
 reset mclr
 quit
