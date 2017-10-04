@@ -11,6 +11,6 @@ int main (void)
   union word x;
   x.i = 1;
   printf ("%d constant t-little-endian\n", x.c);
-  printf ("%d constant t-cell\n", sizeof (int));
+  printf ("%ld constant t-cell\n", sizeof (int));
   return 0;
 }

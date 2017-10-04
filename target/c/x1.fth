@@ -17,7 +17,7 @@ also meta definitions also assembler
 
 : branch?,   ;
 
-: t-num   ."   *--sp = " (.) ." ;" cr ;
+: t-num   ."   *--sp = 0x" (.) ." ;" cr ;
 
 : prologue, ;
 : end-target   ." int main (void) { cold(); return 0; }" cr ;
